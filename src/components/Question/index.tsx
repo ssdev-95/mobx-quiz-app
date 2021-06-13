@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from "react";
+import { observer } from 'mobx-react-lite'
 import { Form, Formik } from 'formik'
-import { Card, Button } from "@material-ui/core";
-import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
-import { makeStyles } from "@material-ui/core/styles";
+import { Card, Button } from "@material-ui/core"
+import VerifiedUserIcon from '@material-ui/icons/VerifiedUser'
+import { makeStyles } from "@material-ui/core/styles"
 
-import { Radio } from '@/components/Radio'
+import Radio from '@/components/Radio'
 
 import rootStore from '@/stores/root'
 import { QuestionProps } from '@/types'
@@ -58,14 +58,14 @@ const useQuestionStyles = makeStyles({
     fontSize: '3rem',
     filter: 'invert(.5) sepia(.1) saturate(50) hue-rotate(90deg)'
   }
-});
+})
 
-export const Question = ({ quiz }: QuestionProps) => {
-  const { card, form, option, heading, container, finishBtn, icon } = useQuestionStyles();
+const Question = ({ quiz }: QuestionProps) => {
+  const { card, form, option, heading, container, finishBtn, icon } = useQuestionStyles()
 
   return (
     <div className={container}>{
-      quiz.map((question, index) => (
+      rootStore.quests.map((question, index) => (
         <Card
           key={`question${index + 1}`}
           className={card}
@@ -89,5 +89,7 @@ export const Question = ({ quiz }: QuestionProps) => {
         </Card>
       ))
     }</div>
-  );
-};
+  )
+}
+
+export default observer(Question)

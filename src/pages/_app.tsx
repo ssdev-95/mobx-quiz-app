@@ -1,4 +1,3 @@
-import React from "react"
 import Head from 'next/head'
 import reportWebVitals from "@/reportWebVitals"
 
@@ -15,7 +14,7 @@ export default function MyApp({ Component, PageProps }) {
           name="description"
           content="Web site created using create-react-app"
         />
-        <title>xQuests&trade;</title>
+        <title>Mobx Quiz App&trade;</title>
       </Head>
       <Component {...PageProps} />
     </>

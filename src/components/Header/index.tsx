@@ -1,8 +1,8 @@
-import React from 'react'
-
+import { observer } from 'mobx-react-lite'
 import { Toolbar, Button } from '@material-ui/core'
 import ReplayIcon from '@material-ui/icons/Replay'
 import { makeStyles } from '@material-ui/core/styles'
+import modalStore from '@/stores/modals'
 
 const useHeader = makeStyles({
     header: {
@@ -24,15 +24,17 @@ const useHeader = makeStyles({
     }
 })
 
-export const Header = () => {
+const Header = () => {
     const { header, button, paragraph } = useHeader()
 
     return (
         <Toolbar className={header}>
             <p className={paragraph}>Welcome to the world of quests</p>
-            <Button className={button}>
+            <Button onClick={modalStore.toggleSelectModal} className={button}>
                 <ReplayIcon />
             </Button>
         </Toolbar>
     )
 }
+
+export default observer(Header)

@@ -15,3 +15,8 @@ export interface QuizResults {
 export interface QuestionProps {
     quiz: Quest[]
 }
+
+export interface ModalProps {
+    isOpen: boolean;
+    toggleModal: ()=>void;
+}

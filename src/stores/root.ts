@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Quest, QuizResults } from '@/types'
 
 class RootStore {
-  api_uri: string = `${process.env.NEXT_APP_API_URI}`
+  api_uri: string = `${process.env.NEXT_PUBLIC_API_URI}`
   quests: Quest[] = []
   results: QuizResults[] = []
 
@@ -13,8 +13,7 @@ class RootStore {
 
   async getQuests(quantity: number) {
     const res = await axios.get(this.api_uri.concat(`=${quantity}`))
-    
-    this.quests = (res.data.results).map(ponse=>({
+    const aux = (res.data.results).map(ponse=>({
       category: ponse.category,
       correct_answer: 0,
       answers: [ponse.correct_answer, ...ponse.incorrect_answers],
@@ -22,6 +21,7 @@ class RootStore {
       question: ponse.question,
       type: ponse.type,
     }))
+    this.quests = [ ...aux ]
   }
 
   handleQuizEnd(results: QuizResults[]) {

@@ -6,6 +6,8 @@ import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline'
 
 import { makeStyles } from "@material-ui/core/styles"
 
+import { ModalProps } from '@/types'
+
 const useModalStyle = makeStyles({
   modal: {
     height: "15rem",
@@ -49,22 +51,23 @@ const useModalStyle = makeStyles({
   }
 })
 
-export const FinishedQuizModal = () => {
+const FinishedQuizModal = ({ isOpen, toggleModal }: ModalProps) => {
   const { modal, container, actions, msg, icon } = useModalStyle()
-  const [isFinishedQuizModalOpen, setIsFinishedQuizModalOpen] = useState(false)
 
   const handleSubmit = () => {
     console.log('quiz finalyzed')
+    toggleModal()
   }
 
   return (
-    <Modal open={isFinishedQuizModalOpen} className={modal}>
+    <Modal open={isOpen} className={modal}>
       <div className={container}>
         <ErrorOutlineIcon className={icon} />
         <h2 className={msg}>Really end this quiz?</h2>
         <div className={actions}>
           <Button
              style={{background: 'red', color: "#f0f2f5"}}
+             onClic={toggleModal}
           >Nope</Button>
           <Button
              style={{background: 'green', color: "#f0f2f5"}}
@@ -75,3 +78,5 @@ export const FinishedQuizModal = () => {
     </Modal>
   )
 }
+
+export default FinishedQuizModal

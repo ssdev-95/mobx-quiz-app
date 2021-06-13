@@ -1,8 +1,7 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useField } from 'formik'
 
-export const Radio = (props) => {
+const Radio = (props) => {
   const [meta, helper, field] = useField(`option_${props.index+1}`)
   const {results, func} = props
 
@@ -19,3 +18,5 @@ export const Radio = (props) => {
 
   )
 }
+
+export default Radio
