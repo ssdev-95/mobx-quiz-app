@@ -1,7 +1,7 @@
 # Mobx Quiz App
 ## Welcome to the world of quests!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and manually updated to use [NextJS](https://nextjs.org)&trade;.
 
 ## Features
 
