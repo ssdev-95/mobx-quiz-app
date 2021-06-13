@@ -21,13 +21,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Techs embed
 
-* [ReactJS](https://reactjs.org)&trade;.
+* [NextJS](https://nextjs.org)&trade;.
 
 * [Formik](https://formik.org)&trade;.
 
 * [Axios](https://github.com/axios/axios)&trade;.
 
 * [MaterialUI](https://material-ui.com)&trade;.
+
+* [Mobx](https://mobx.js.org)&trade;.
 
 ## How to run this project
 
