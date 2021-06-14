@@ -41,11 +41,9 @@ Then in any Terminal, navigate to the project directory.
 
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn dev`
 
-Runs the app in the development mode.\
-The project will open in [http://localhost:3000](http://localhost:3000) on the browser.
-
-### For a first look, reach at it [here](https://x-quests.vercel.app).
+This runs the app in the development mode.\
+The project can be open at [http://localhost:3000](http://localhost:3000) on the browser.
 
 ### xSallus&trade; - 2021
